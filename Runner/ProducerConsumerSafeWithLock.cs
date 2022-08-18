@@ -1,4 +1,4 @@
-﻿using DataBuffer;
+using DataBuffer;
 
 namespace ThreadProducerConsumer
 {
