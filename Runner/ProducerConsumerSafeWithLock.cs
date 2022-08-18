@@ -18,13 +18,17 @@ namespace ThreadProducerConsumer
         {
             while (true)
             {
+                var product = string.Empty;
+                
                 lock (_producerLockObj)
                 {
                     if (_produced >= ItemsToProduce)
                         return; // END!
-                    
-                    _list.AddItem($"P-{++_produced}");
+
+                    product = $"P-{++_produced}";
                 }
+                
+                _list.AddItem(product);
 
                 Thread.Sleep(0); // Force the scheduler to change the context to another thread
             }
